@@ -7,7 +7,7 @@ const MLFrameworksAnimation = () => {
   const [selectedAlgorithms, setSelectedAlgorithms] = useState([]);
   const [isAnimating, setIsAnimating] = useState(true);
   const [animationStep, setAnimationStep] = useState(0);
-  
+
   const categories = [
     { id: 'supervised', name: '监督学习', description: '使用带标签的数据进行训练', icon: '📋' },
     { id: 'unsupervised', name: '无监督学习', description: '从无标签数据中发现模式', icon: '🔍' },
@@ -19,14 +19,13 @@ const MLFrameworksAnimation = () => {
   // 自动切换类别的动画效果
   useEffect(() => {
     if (!isAnimating) return;
-    
+
     const categoryIds = categories.map(c => c.id);
-    
+
     const timer = setTimeout(() => {
       setAnimationStep((prev) => {
         const nextStep = prev + 1;
         if (nextStep >= categoryIds.length) {
-          // 动画完成一轮后返回第一个类别
           setActiveCategory(categoryIds[0]);
           return 0;
         }
@@ -34,7 +33,7 @@ const MLFrameworksAnimation = () => {
         return nextStep;
       });
     }, 3000); // 每3秒切换一个类别
-    
+
     return () => clearTimeout(timer);
   }, [animationStep, isAnimating]);
 
@@ -350,7 +349,7 @@ const MLFrameworksAnimation = () => {
 
   const handleAlgorithmClick = (algorithm) => {
     setIsAnimating(false); // 用户交互时停止自动动画
-    
+
     if (isComparing) {
       // 在比较模式下，添加或移除算法
       if (selectedAlgorithms.some(a => a.name === algorithm.name)) {
@@ -396,7 +395,7 @@ const MLFrameworksAnimation = () => {
 
   const renderAlgorithmCard = (algorithm) => {
     const isSelected = selectedAlgorithms.some(a => a.name === algorithm.name);
-    
+
     return (
       <div 
         key={algorithm.name}
@@ -435,11 +434,76 @@ const MLFrameworksAnimation = () => {
     );
   };
 
+  const renderAlgorithmDetail = (algorithm) => {
+    return (
+      <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
+        <div className="flex items-center gap-4 mb-4">
+          <span className="text-4xl">{algorithm.icon}</span>
+          <div>
+            <h2 className="text-2xl font-bold">{algorithm.name}</h2>
+            <p className="text-gray-600">{algorithm.description}</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+          <div>
+            <h3 className="font-bold text-lg mb-2">优势</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              {algorithm.pros.map((pro, idx) => (
+                <li key={idx} className="text-green-700">{pro}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg mb-2">局限性</h3>
+            <ul className="list-disc pl-5 space-y-1">
+              {algorithm.cons.map((con, idx) => (
+                <li key={idx} className="text-red-700">{con}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="mb-4">
+          <h3 className="font-bold text-lg mb-2">应用场景</h3>
+          <div className="flex flex-wrap gap-2">
+            {algorithm.useCases.map((useCase, idx) => (
+              <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                {useCase}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <h4 className="font-medium text-sm">计算复杂度</h4>
+            <div className="bg-gray-200 rounded-full h-4 mt-1">
+              <div className={`${complexityMap[algorithm.complexity]} h-4 rounded-full`}></div>
+            </div>
+            <div className="text-xs text-center mt-1">{algorithm.complexity}</div>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm">数据需求</h4>
+            <div className="bg-gray-200 rounded-full h-4 mt-1">
+              <div className={`${dataRequirementMap[algorithm.dataRequirement]} h-4 rounded-full`}></div>
+            </div>
+            <div className="text-xs text-center mt-1">{algorithm.dataRequirement}</div>
+          </div>
+          <div>
+            <h4 className="font-medium text-sm">可解释性</h4>
+            <div className="bg-gray-200 rounded-full h-4 mt-1">
+              <div className={`${interpretabilityMap[algorithm.interpretability]} h-4 rounded-full`}></div>
+            </div>
+            <div className="text-xs text-center mt-1">{algorithm.interpretability}</div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderComparisonView = () => {
     if (selectedAlgorithms.length === 0) {
       return (
         <div className="text-center p-8 bg-gray-50 rounded-lg mt-6">
-          <p className="text-gray-500">选择最多3个算法进行比较</p>
+          <p className="text-gray-500">请选择要比较的算法（最多3个）</p>
         </div>
       );
     }
@@ -510,7 +574,7 @@ const MLFrameworksAnimation = () => {
               <td className="py-2 font-medium">计算复杂度</td>
               {selectedAlgorithms.map(algo => (
                 <td key={algo.name} className="py-2">
-                  <div className="bg-gray-200 rounded-full h-4 w-48">
+                  <div className="bg-gray-200 rounded-full h-4 w-32">
                     <div className={`${complexityMap[algo.complexity]} h-4 rounded-full`}></div>
                   </div>
                   <div className="text-xs mt-1">{algo.complexity}</div>
@@ -521,7 +585,7 @@ const MLFrameworksAnimation = () => {
               <td className="py-2 font-medium">数据需求</td>
               {selectedAlgorithms.map(algo => (
                 <td key={algo.name} className="py-2">
-                  <div className="bg-gray-200 rounded-full h-4 w-48">
+                  <div className="bg-gray-200 rounded-full h-4 w-32">
                     <div className={`${dataRequirementMap[algo.dataRequirement]} h-4 rounded-full`}></div>
                   </div>
                   <div className="text-xs mt-1">{algo.dataRequirement}</div>
@@ -532,7 +596,7 @@ const MLFrameworksAnimation = () => {
               <td className="py-2 font-medium">可解释性</td>
               {selectedAlgorithms.map(algo => (
                 <td key={algo.name} className="py-2">
-                  <div className="bg-gray-200 rounded-full h-4 w-48">
+                  <div className="bg-gray-200 rounded-full h-4 w-32">
                     <div className={`${interpretabilityMap[algo.interpretability]} h-4 rounded-full`}></div>
                   </div>
                   <div className="text-xs mt-1">{algo.interpretability}</div>
@@ -545,77 +609,6 @@ const MLFrameworksAnimation = () => {
     );
   };
 
-  const renderAlgorithmDetail = (algorithm) => {
-    return (
-      <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
-        <div className="flex items-center gap-4 mb-4">
-          <span className="text-4xl">{algorithm.icon}</span>
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold">{algorithm.name}</h2>
-            <p className="text-gray-600">{algorithm.description}</p>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-          <div>
-            <h3 className="font-bold text-lg mb-2">优势</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              {algorithm.pros.map((pro, idx) => (
-                <li key={idx} className="text-green-700">{pro}</li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-bold text-lg mb-2">局限性</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              {algorithm.cons.map((con, idx) => (
-                <li key={idx} className="text-red-700">{con}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        
-        <div className="mb-4">
-          <h3 className="font-bold text-lg mb-2">常见应用场景</h3>
-          <div className="flex flex-wrap gap-2">
-            {algorithm.useCases.map((useCase, idx) => (
-              <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                {useCase}
-              </span>
-            ))}
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <h3 className="font-bold mb-1 text-sm">计算复杂度</h3>
-            <div className="bg-gray-200 rounded-full h-4">
-              <div className={`${complexityMap[algorithm.complexity]} h-4 rounded-full`}></div>
-            </div>
-            <div className="text-xs text-center mt-1">{algorithm.complexity}</div>
-          </div>
-          
-          <div>
-            <h3 className="font-bold mb-1 text-sm">数据需求量</h3>
-            <div className="bg-gray-200 rounded-full h-4">
-              <div className={`${dataRequirementMap[algorithm.dataRequirement]} h-4 rounded-full`}></div>
-            </div>
-            <div className="text-xs text-center mt-1">{algorithm.dataRequirement}</div>
-          </div>
-          
-          <div>
-            <h3 className="font-bold mb-1 text-sm">可解释性</h3>
-            <div className="bg-gray-200 rounded-full h-4">
-              <div className={`${interpretabilityMap[algorithm.interpretability]} h-4 rounded-full`}></div>
-            </div>
-            <div className="text-xs text-center mt-1">{algorithm.interpretability}</div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
   return (
     <div className="bg-white rounded-lg shadow-lg p-4">
       {/* 分类导航 */}
@@ -635,7 +628,7 @@ const MLFrameworksAnimation = () => {
           </button>
         ))}
       </div>
-      
+
       {/* 操作按钮 */}
       <div className="mb-4 flex justify-between items-center">
         <h2 className="text-xl font-bold">{categories.find(c => c.id === activeCategory).name}</h2>
@@ -665,17 +658,17 @@ const MLFrameworksAnimation = () => {
           </button>
         </div>
       </div>
-      
+
       <p className="text-gray-600 mb-6">
         {categories.find(c => c.id === activeCategory).description}
         {isComparing && ' - 选择最多3个算法进行比较'}
       </p>
-      
+
       {/* 算法卡片网格 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {mlFrameworks[activeCategory].map(algorithm => renderAlgorithmCard(algorithm))}
       </div>
-      
+
       {/* 算法详情或比较视图 */}
       {isComparing ? (
         renderComparisonView()
