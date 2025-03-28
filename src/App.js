@@ -21,7 +21,8 @@ function App() {
         <Route path="/neural-networks" element={<NeuralNetworksPage />} />
         <Route path="/nlp" element={<NLPPage />} />
         <Route path="/deep-learning" element={<DeepLearningPage />} />
-        <Route path="/ml-frameworks" element={<MLFrameworksPage />} /> {/* 添加新路由 */}
+        <Route path="/ml-frameworks" element={<MLFrameworksPage />} />
+        <Route path="/lstm" element={<LSTMPage />} />
       </Routes>
     </Router>
   );

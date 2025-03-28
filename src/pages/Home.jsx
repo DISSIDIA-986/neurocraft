@@ -66,6 +66,14 @@ const Home = () => {
       image: '🔍',
       color: 'from-teal-400 to-teal-600',
       path: '/ml-frameworks'
+    },
+    {
+      id: 'lstm',
+      title: 'LSTM长短期记忆网络',
+      description: '了解LSTM如何处理序列数据，以及其在文本预测中的应用。',
+      image: '📊',
+      color: 'from-cyan-400 to-cyan-600',
+      path: '/lstm'
     }
   ];
 
