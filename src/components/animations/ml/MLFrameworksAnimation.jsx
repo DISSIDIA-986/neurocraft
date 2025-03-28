@@ -434,81 +434,6 @@ const MLFrameworksAnimation = () => {
       </div>
     );
   };
-  
-  return (
-    <div className="bg-white rounded-lg shadow-lg p-4">
-      {/* 分类导航 */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {categories.map(category => (
-          <button
-            key={category.id}
-            className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-colors ${
-              activeCategory === category.id
-                ? 'bg-blue-500 text-white'
-                : 'bg-gray-100 hover:bg-gray-200'
-            }`}
-            onClick={() => handleCategoryClick(category.id)}
-          >
-            <span>{category.icon}</span>
-            <span>{category.name}</span>
-          </button>
-        ))}
-      </div>
-      
-      {/* 操作按钮 */}
-      <div className="mb-4 flex justify-between items-center">
-        <h2 className="text-xl font-bold">{categories.find(c => c.id === activeCategory).name}</h2>
-        <div className="flex gap-2">
-          <button 
-            className={`px-4 py-2 rounded-lg ${
-              isAnimating ? 'bg-purple-500 text-white' : 'bg-gray-300'
-            }`}
-            onClick={() => {
-              setAnimationStep(0);
-              setActiveCategory(categories[0].id);
-              setIsAnimating(!isAnimating);
-              setActiveAlgorithm(null);
-              setIsComparing(false);
-              setSelectedAlgorithms([]);
-            }}
-          >
-            {isAnimating ? '停止动画' : '播放动画'}
-          </button>
-          <button 
-            className={`px-4 py-2 rounded-lg ${
-              isComparing ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'
-            }`}
-            onClick={toggleCompareMode}
-          >
-            {isComparing ? '退出比较模式' : '比较算法'}
-          </button>
-        </div>
-      </div>
-      
-      <p className="text-gray-600 mb-6">
-        {categories.find(c => c.id === activeCategory).description}
-        {isComparing && ' - 选择最多3个算法进行比较'}
-      </p>
-      
-      {/* 算法卡片网格 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {mlFrameworks[activeCategory].map(algorithm => renderAlgorithmCard(algorithm))}
-      </div>
-      
-      {/* 算法详情或比较视图 */}
-      {isComparing ? (
-        renderComparisonView()
-      ) : (
-        activeAlgorithm && renderAlgorithmDetail(activeAlgorithm)
-      )}
-    </div>
-  );
-};
-
-export default MLFrameworksAnimation;
-      </div>
-    );
-  };
 
   const renderComparisonView = () => {
     if (selectedAlgorithms.length === 0) {
@@ -687,3 +612,78 @@ export default MLFrameworksAnimation;
             <div className="text-xs text-center mt-1">{algorithm.interpretability}</div>
           </div>
         </div>
+      </div>
+    );
+  };
+  
+  return (
+    <div className="bg-white rounded-lg shadow-lg p-4">
+      {/* 分类导航 */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {categories.map(category => (
+          <button
+            key={category.id}
+            className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-colors ${
+              activeCategory === category.id
+                ? 'bg-blue-500 text-white'
+                : 'bg-gray-100 hover:bg-gray-200'
+            }`}
+            onClick={() => handleCategoryClick(category.id)}
+          >
+            <span>{category.icon}</span>
+            <span>{category.name}</span>
+          </button>
+        ))}
+      </div>
+      
+      {/* 操作按钮 */}
+      <div className="mb-4 flex justify-between items-center">
+        <h2 className="text-xl font-bold">{categories.find(c => c.id === activeCategory).name}</h2>
+        <div className="flex gap-2">
+          <button 
+            className={`px-4 py-2 rounded-lg ${
+              isAnimating ? 'bg-purple-500 text-white' : 'bg-gray-300'
+            }`}
+            onClick={() => {
+              setAnimationStep(0);
+              setActiveCategory(categories[0].id);
+              setIsAnimating(!isAnimating);
+              setActiveAlgorithm(null);
+              setIsComparing(false);
+              setSelectedAlgorithms([]);
+            }}
+          >
+            {isAnimating ? '停止动画' : '播放动画'}
+          </button>
+          <button 
+            className={`px-4 py-2 rounded-lg ${
+              isComparing ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'
+            }`}
+            onClick={toggleCompareMode}
+          >
+            {isComparing ? '退出比较模式' : '比较算法'}
+          </button>
+        </div>
+      </div>
+      
+      <p className="text-gray-600 mb-6">
+        {categories.find(c => c.id === activeCategory).description}
+        {isComparing && ' - 选择最多3个算法进行比较'}
+      </p>
+      
+      {/* 算法卡片网格 */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {mlFrameworks[activeCategory].map(algorithm => renderAlgorithmCard(algorithm))}
+      </div>
+      
+      {/* 算法详情或比较视图 */}
+      {isComparing ? (
+        renderComparisonView()
+      ) : (
+        activeAlgorithm && renderAlgorithmDetail(activeAlgorithm)
+      )}
+    </div>
+  );
+};
+
+export default MLFrameworksAnimation;

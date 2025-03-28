@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import Home from './pages/Home';
 import CNNPage from './pages/CNNPage';
 import EmbeddingsPage from './pages/EmbeddingsPage';
 import HyperparametersPage from './pages/HyperparametersPage';
@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/cnn" element={<CNNPage />} />
         <Route path="/embeddings" element={<EmbeddingsPage />} />
         <Route path="/hyperparameters" element={<HyperparametersPage />} />
