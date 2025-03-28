@@ -20,7 +20,7 @@ const WordEmbeddingAnimation = () => {
       }, 3000);
     }
     return () => clearInterval(timer);
-  }, [isPlaying]);
+  }, [isPlaying, totalSteps]);  // 添加 totalSteps 作为依赖项
 
   const words = ['cat', 'kitten', 'dog', 'houses', 'man', 'woman', 'king', 'queen'];
   const dimensions = ['living being', 'feline', 'human', 'gender', 'royalty', 'verb', 'plural'];
@@ -380,3 +380,6 @@ const WordEmbeddingAnimation = () => {
       </div>
     </div>
   );
+};
+
+export default WordEmbeddingAnimation;

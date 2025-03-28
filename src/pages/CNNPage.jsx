@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/common/Layout';
-import CNNImageClassification from '../components/animations/cnn/CNNImageClassification';
+import CNNImageClassification from '../components/animations/cnn/CNNImageClassification.jsx';
 
 const CNNPage = () => {
   return (
