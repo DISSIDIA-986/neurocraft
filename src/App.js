@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import CNNPage from './pages/CNNPage';
 import EmbeddingsPage from './pages/EmbeddingsPage';
@@ -7,12 +7,13 @@ import MLPPage from './pages/MLPPage';
 import NeuralNetworksPage from './pages/NeuralNetworksPage';
 import NLPPage from './pages/NLPPage';
 import DeepLearningPage from './pages/DeepLearningPage';
-import MLFrameworksPage from './pages/MLFrameworksPage'; // 导入新页面
-import LSTMPage from './pages/LSTMPage'; // 导入新页面
+import MLFrameworksPage from './pages/MLFrameworksPage'; 
+import LSTMPage from './pages/LSTMPage'; 
 
 function App() {
+  // 使用HashRouter替代BrowserRouter，这样在GitHub Pages环境中更可靠
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cnn" element={<CNNPage />} />
@@ -25,7 +26,7 @@ function App() {
         <Route path="/ml-frameworks" element={<MLFrameworksPage />} />
         <Route path="/lstm" element={<LSTMPage />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
