@@ -14,6 +14,7 @@ const Navbar = () => {
     { name: '神经网络基础', href: '/neural-networks' },
     { name: 'NLP处理流程', href: '/nlp' },
     { name: '深度学习架构', href: '/deep-learning' },
+    { name: 'ML框架速查表', href: '/ml-frameworks' }, // 新增的导航项
   ];
 
   const toggleMenu = () => {
