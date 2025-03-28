@@ -58,6 +58,14 @@ const Home = () => {
       image: '🏗️',
       color: 'from-pink-400 to-pink-600',
       path: '/deep-learning'
+    },
+    {
+      id: 'ml-frameworks',
+      title: '机器学习框架速查表',
+      description: '探索不同机器学习算法和框架的特点、优势和适用场景',
+      image: '🔍',
+      color: 'from-teal-400 to-teal-600',
+      path: '/ml-frameworks'
     }
   ];
 

@@ -7,7 +7,7 @@ import MLPPage from './pages/MLPPage';
 import NeuralNetworksPage from './pages/NeuralNetworksPage';
 import NLPPage from './pages/NLPPage';
 import DeepLearningPage from './pages/DeepLearningPage';
-import MLFrameworksPage from './pages/MLFrameworksPage.jsx'; // 导入新页面
+import MLFrameworksPage from './pages/MLFrameworksPage'; // 导入新页面
 
 function App() {
   return (
