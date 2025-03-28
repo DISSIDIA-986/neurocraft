@@ -28,7 +28,7 @@ git checkout -b gh-pages
 
 # 修改 package.json，添加 homepage 配置
 echo "Updating package.json with homepage configuration..."
-sed -i.bak 's/"name": "canada-unemployment-dashboard"/"homepage": "https:\/\/dissidia-986.github.io\/canada-unemployment-dashboard",\n  "name": "canada-unemployment-dashboard"/' package.json
+sed -i.bak 's/"name": "neurocraft"/"homepage": "https:\/\/dissidia-986.github.io\/neurocraft",\n  "name": "neurocraft"/' package.json
 rm package.json.bak
 
 # 提交更改
