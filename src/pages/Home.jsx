@@ -5,72 +5,72 @@ const Home = () => {
   const cards = [
     {
       id: 'cnn',
-      title: 'CNN可视化',
-      description: '通过动画理解卷积神经网络如何处理图像数据，包括卷积操作、池化层和分类过程。',
+      title: 'CNN Visualization',
+      description: 'Understand how convolutional neural networks process image data through animations, including convolution operations, pooling layers, and classification processes.',
       image: '🖼️',
       color: 'from-blue-400 to-blue-600',
       path: '/cnn'
     },
     {
       id: 'embeddings',
-      title: '词嵌入动画',
-      description: '了解如何将文本转换为向量，以及词嵌入如何捕捉语义关系。',
+      title: 'Word Embedding Animation',
+      description: 'Learn how text is converted into vectors, and how word embeddings capture semantic relationships.',
       image: '📝',
       color: 'from-green-400 to-green-600',
       path: '/embeddings'
     },
     {
       id: 'hyperparameters',
-      title: '超参数调优',
-      description: '探索超参数如何影响模型性能，以及不同的超参数搜索策略。',
+      title: 'Hyperparameter Tuning',
+      description: 'Explore how hyperparameters affect model performance, and various hyperparameter search strategies.',
       image: '🔧',
       color: 'from-yellow-400 to-yellow-600',
       path: '/hyperparameters'
     },
     {
       id: 'mlp',
-      title: '多层感知机',
-      description: '了解神经网络的基本构建块和多层感知机的工作原理。',
+      title: 'Multilayer Perceptron',
+      description: 'Learn about the basic building blocks of neural networks and how multilayer perceptrons work.',
       image: '🧠',
       color: 'from-purple-400 to-purple-600',
       path: '/mlp'
     },
     {
       id: 'neural-networks',
-      title: '神经网络基础',
-      description: '探索神经网络的基本结构和前向传播的过程。',
+      title: 'Neural Network Fundamentals',
+      description: 'Explore the basic structure of neural networks and the forward propagation process.',
       image: '🔮',
       color: 'from-indigo-400 to-indigo-600',
       path: '/neural-networks'
     },
     {
       id: 'nlp',
-      title: 'NLP处理流程',
-      description: '了解自然语言处理的基本步骤，从文本清理到词形还原。',
+      title: 'NLP Processing Pipeline',
+      description: 'Understand the basic steps of natural language processing, from text cleaning to lemmatization.',
       image: '📊',
       color: 'from-red-400 to-red-600',
       path: '/nlp'
     },
     {
       id: 'deep-learning',
-      title: '深度学习架构',
-      description: '比较不同的神经网络架构（CNN, RNN, LSTM, ResNet）及其适用场景。',
+      title: 'Deep Learning Architectures',
+      description: 'Compare different neural network architectures (CNN, RNN, LSTM, ResNet) and their suitable scenarios.',
       image: '🏗️',
       color: 'from-pink-400 to-pink-600',
       path: '/deep-learning'
     },
     {
       id: 'ml-frameworks',
-      title: '机器学习框架速查表',
-      description: '探索不同机器学习算法和框架的特点、优势和适用场景',
+      title: 'Machine Learning Frameworks Cheatsheet',
+      description: 'Explore features, advantages, and suitable scenarios for different machine learning algorithms and frameworks.',
       image: '🔍',
       color: 'from-teal-400 to-teal-600',
       path: '/ml-frameworks'
     },
     {
       id: 'lstm',
-      title: 'LSTM长短期记忆网络',
-      description: '了解LSTM如何处理序列数据，以及其在文本预测中的应用。',
+      title: 'LSTM Networks',
+      description: 'Learn how LSTM handles sequence data and its application in text prediction.',
       image: '📊',
       color: 'from-cyan-400 to-cyan-600',
       path: '/lstm'
@@ -85,21 +85,21 @@ const Home = () => {
           NeuroCraft
         </h1>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-          通过交互式动画和可视化，轻松理解神经网络、深度学习和自然语言处理的复杂概念。
+          Easily understand complex concepts of neural networks, deep learning, and natural language processing through interactive animations and visualizations.
         </p>
       </div>
 
       {/* Information Section */}
       <div className="bg-blue-50 rounded-lg p-6 mb-12 shadow-md">
-        <h2 className="text-2xl font-bold mb-4 text-blue-800">🎯 项目目标</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">🎯 Project Goals</h2>
         <p className="text-gray-700 mb-4">
-          NeuroCraft 旨在通过直观的动画和交互式可视化，帮助数据分析和人工智能的学习者更好地理解复杂的概念。
-          无论你是初学者还是寻求复习的学生，这些可视化工具都能帮助你建立更深入的理解。
+          NeuroCraft aims to help learners of data analysis and artificial intelligence better understand complex concepts through intuitive animations and interactive visualizations.
+          Whether you're a beginner or a student seeking review, these visualization tools can help you build a deeper understanding.
         </p>
-        <h2 className="text-2xl font-bold mb-4 text-blue-800">🧩 如何使用</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">🧩 How to Use</h2>
         <p className="text-gray-700">
-          选择下方任意一个主题，探索相应的动画和可视化内容。每个动画都包含可交互的元素，
-          帮助你理解各种机器学习和深度学习概念的工作原理。
+          Select any topic below to explore the corresponding animations and visualization content. Each animation contains interactive elements
+          that help you understand how various machine learning and deep learning concepts work.
         </p>
       </div>
 
@@ -126,9 +126,9 @@ const Home = () => {
 
       {/* Call to Action */}
       <div className="text-center mt-16">
-        <h2 className="text-2xl font-bold mb-4">准备好深入学习了吗？</h2>
+        <h2 className="text-2xl font-bold mb-4">Ready to dive deeper into learning?</h2>
         <p className="text-lg text-gray-700 mb-6">
-          点击上方任意卡片开始探索，或者从导航栏选择一个主题。
+          Click on any card above to start exploring, or select a topic from the navigation bar.
         </p>
       </div>
     </div>
