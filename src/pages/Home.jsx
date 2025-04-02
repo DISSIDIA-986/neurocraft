@@ -57,7 +57,7 @@ const Home = () => {
       description: '了解如何通过检索相关文档来增强大语言模型的生成能力，提高回答的准确性和可靠性。',
       image: '🔎',
       color: 'from-orange-400 to-orange-600',
-      path: '/rag'
+      path: 'rag'
     },
     {
       id: 'deep-learning',

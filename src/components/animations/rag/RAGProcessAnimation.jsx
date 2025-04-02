@@ -1,3 +1,6 @@
+// 此组件应该放在与其他动画组件相同的目录中
+// 基于NLPProcessAnimation.jsx的位置，可能是 src/components/animations/ 目录
+
 import React, { useState, useEffect } from 'react';
 
 const RAGProcessAnimation = () => {
