@@ -10,6 +10,7 @@ import DeepLearningPage from './pages/DeepLearningPage';
 import MLFrameworksPage from './pages/MLFrameworksPage'; 
 import LSTMPage from './pages/LSTMPage'; 
 import RAGPage from './pages/RAGPage';
+import EmbeddingModelPage from './pages/EmbeddingModelPage';
 
 function App() {
   // 使用HashRouter替代BrowserRouter，这样在GitHub Pages环境中更可靠
@@ -27,6 +28,7 @@ function App() {
         <Route path="/ml-frameworks" element={<MLFrameworksPage />} />
         <Route path="/lstm" element={<LSTMPage />} />
         <Route path="/rag" element={<RAGPage />} />
+        <Route path="/embedding-model" element={<EmbeddingModelPage />} />
       </Routes>
     </HashRouter>
   );

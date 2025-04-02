@@ -20,6 +20,14 @@ const Home = () => {
       path: '/embeddings'
     },
     {
+      id: 'embedding-model',
+      title: '嵌入模型详解',
+      description: '探索嵌入模型的工作原理及中英文主流嵌入模型对比，了解如何选择适合特定应用场景的模型。',
+      image: '🧩',
+      color: 'from-purple-400 to-purple-600',
+      path: '/embedding-model'
+    },
+    {
       id: 'hyperparameters',
       title: 'Hyperparameter Tuning',
       description: 'Explore how hyperparameters affect model performance, and various hyperparameter search strategies.',
@@ -57,7 +65,7 @@ const Home = () => {
       description: '了解如何通过检索相关文档来增强大语言模型的生成能力，提高回答的准确性和可靠性。',
       image: '🔎',
       color: 'from-orange-400 to-orange-600',
-      path: 'rag'
+      path: '/rag'
     },
     {
       id: 'deep-learning',
