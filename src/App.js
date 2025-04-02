@@ -12,7 +12,8 @@ import LSTMPage from './pages/LSTMPage';
 import RAGPage from './pages/RAGPage';
 import EmbeddingModelPage from './pages/EmbeddingModelPage';
 import TransformersPage from './pages/TransformersPage';
-import RLHFPage from './pages/RLHFPage';  // 导入新的RLHF页面
+import RLHFPage from './pages/RLHFPage';
+import ExpertSystemPage from './pages/ExpertSystemPage';
 
 function App() {
   // 使用HashRouter替代BrowserRouter，这样在GitHub Pages环境中更可靠
@@ -32,7 +33,8 @@ function App() {
         <Route path="/rag" element={<RAGPage />} />
         <Route path="/embedding-model" element={<EmbeddingModelPage />} />
         <Route path="/transformers" element={<TransformersPage />} />
-        <Route path="/rlhf" element={<RLHFPage />} />  {/* 添加新的RLHF路由 */}
+        <Route path="/rlhf" element={<RLHFPage />} />
+        <Route path="/expert-system" element={<ExpertSystemPage />} />
       </Routes>
     </HashRouter>
   );

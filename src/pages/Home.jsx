@@ -36,6 +36,14 @@ const Home = () => {
       path: '/transformers'
     },
     {
+      id: 'expert-system',
+      title: '专家系统 (Expert Systems)',
+      description: '了解AI发展早期的重要技术—专家系统，探索其组成部分、工作原理及在现代AI中的影响与应用。',
+      image: '🧠',
+      color: 'from-red-400 to-red-600',
+      path: '/expert-system'
+    },
+    {
       id: 'hyperparameters',
       title: 'Hyperparameter Tuning',
       description: 'Explore how hyperparameters affect model performance, and various hyperparameter search strategies.',
