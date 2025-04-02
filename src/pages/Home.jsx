@@ -98,6 +98,14 @@ const Home = () => {
       image: '📊',
       color: 'from-cyan-400 to-cyan-600',
       path: '/lstm'
+    },
+    {
+      id: 'rlhf',
+      title: '基于人类反馈的强化学习 (RLHF)',
+      description: '了解现代AI系统如何通过人类反馈来优化行为，掌握从预训练到强化学习的完整RLHF流程。',
+      image: '🤖',
+      color: 'from-rose-400 to-red-600',
+      path: '/rlhf'
     }
   ];
 
