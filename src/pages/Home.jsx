@@ -52,6 +52,14 @@ const Home = () => {
       path: '/nlp'
     },
     {
+      id: 'rag',
+      title: '检索增强生成 (RAG)',
+      description: '了解如何通过检索相关文档来增强大语言模型的生成能力，提高回答的准确性和可靠性。',
+      image: '🔎',
+      color: 'from-orange-400 to-orange-600',
+      path: '/rag'
+    },
+    {
       id: 'deep-learning',
       title: 'Deep Learning Architectures',
       description: 'Compare different neural network architectures (CNN, RNN, LSTM, ResNet) and their suitable scenarios.',
