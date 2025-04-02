@@ -28,6 +28,14 @@ const Home = () => {
       path: '/embedding-model'
     },
     {
+      id: 'transformers',
+      title: 'Transformers架构详解',
+      description: '了解革命性的Transformer架构，掌握自注意力机制、多头注意力等核心概念，探索从BERT到GPT的各种模型变体。',
+      image: '⚡',
+      color: 'from-yellow-400 to-yellow-600',
+      path: '/transformers'
+    },
+    {
       id: 'hyperparameters',
       title: 'Hyperparameter Tuning',
       description: 'Explore how hyperparameters affect model performance, and various hyperparameter search strategies.',
