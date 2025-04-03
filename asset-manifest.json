@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/neurocraft/static/css/main.7702b04a.css",
+    "main.js": "/neurocraft/static/js/main.5423533e.js",
+    "static/js/453.785a275b.chunk.js": "/neurocraft/static/js/453.785a275b.chunk.js",
+    "index.html": "/neurocraft/index.html",
+    "main.7702b04a.css.map": "/neurocraft/static/css/main.7702b04a.css.map",
+    "main.5423533e.js.map": "/neurocraft/static/js/main.5423533e.js.map",
+    "453.785a275b.chunk.js.map": "/neurocraft/static/js/453.785a275b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7702b04a.css",
+    "static/js/main.5423533e.js"
+  ]
+}
