@@ -21,24 +21,24 @@ const Home = () => {
     },
     {
       id: 'embedding-model',
-      title: '嵌入模型详解',
-      description: '探索嵌入模型的工作原理及中英文主流嵌入模型对比，了解如何选择适合特定应用场景的模型。',
+      title: 'Embedding Model Explained',
+      description: 'Explore how embedding models work and compare mainstream English and Chinese embedding models. Learn how to choose the right model for specific application scenarios.',
       image: '🧩',
       color: 'from-purple-400 to-purple-600',
       path: '/embedding-model'
     },
     {
       id: 'transformers',
-      title: 'Transformers架构详解',
-      description: '了解革命性的Transformer架构，掌握自注意力机制、多头注意力等核心概念，探索从BERT到GPT的各种模型变体。',
+      title: 'Transformers Architecture Explained',
+      description: 'Understand the revolutionary Transformer architecture, master core concepts like self-attention mechanisms and multi-head attention, and explore various model variants from BERT to GPT.',
       image: '⚡',
       color: 'from-yellow-400 to-yellow-600',
       path: '/transformers'
     },
     {
       id: 'expert-system',
-      title: '专家系统 (Expert Systems)',
-      description: '了解AI发展早期的重要技术—专家系统，探索其组成部分、工作原理及在现代AI中的影响与应用。',
+      title: 'Expert Systems',
+      description: 'Learn about expert systems, an important technology from the early development of AI. Explore their components, working principles, and their influence and applications in modern AI.',
       image: '🧠',
       color: 'from-red-400 to-red-600',
       path: '/expert-system'
@@ -77,8 +77,8 @@ const Home = () => {
     },
     {
       id: 'rag',
-      title: '检索增强生成 (RAG)',
-      description: '了解如何通过检索相关文档来增强大语言模型的生成能力，提高回答的准确性和可靠性。',
+      title: 'Retrieval-Augmented Generation (RAG)',
+      description: 'Learn how to enhance large language models\' generation capabilities by retrieving relevant documents, improving the accuracy and reliability of responses.',
       image: '🔎',
       color: 'from-orange-400 to-orange-600',
       path: '/rag'
@@ -109,8 +109,8 @@ const Home = () => {
     },
     {
       id: 'rlhf',
-      title: '基于人类反馈的强化学习 (RLHF)',
-      description: '了解现代AI系统如何通过人类反馈来优化行为，掌握从预训练到强化学习的完整RLHF流程。',
+      title: 'Reinforcement Learning from Human Feedback (RLHF)',
+      description: 'Understand how modern AI systems optimize behavior through human feedback, and master the complete RLHF process from pre-training to reinforcement learning.',
       image: '🤖',
       color: 'from-rose-400 to-red-600',
       path: '/rlhf'
