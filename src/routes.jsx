@@ -8,6 +8,7 @@ import MLPPage from './pages/MLPPage';
 import NeuralNetworksPage from './pages/NeuralNetworksPage';
 import NLPPage from './pages/NLPPage';
 import DeepLearningPage from './pages/DeepLearningPage';
+import PretrainedModelPage from './pages/PretrainedModelPage';
 
 const AppRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoutes = () => {
       <Route path="/neural-networks" element={<NeuralNetworksPage />} />
       <Route path="/nlp" element={<NLPPage />} />
       <Route path="/deep-learning" element={<DeepLearningPage />} />
+      <Route path="/pretrained-model" element={<PretrainedModelPage />} />
     </Routes>
   );
 };

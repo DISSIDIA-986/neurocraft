@@ -36,6 +36,14 @@ const Home = () => {
       path: '/transformers'
     },
     {
+      id: 'pretrained-model',
+      title: 'Pre-trained Models Explained',
+      description: 'Learn how pre-trained models work through the vivid analogy of a university graduate seeking employment. Understand concepts like transfer learning, fine-tuning, and few-shot learning.',
+      image: '🎓',
+      color: 'from-indigo-400 to-indigo-600',
+      path: '/pretrained-model'
+    },
+    {
       id: 'expert-system',
       title: 'Expert Systems',
       description: 'Learn about expert systems, an important technology from the early development of AI. Explore their components, working principles, and their influence and applications in modern AI.',

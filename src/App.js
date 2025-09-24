@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import CNNPage from './pages/CNNPage';
 import EmbeddingsPage from './pages/EmbeddingsPage';
@@ -14,6 +14,7 @@ import EmbeddingModelPage from './pages/EmbeddingModelPage';
 import TransformersPage from './pages/TransformersPage';
 import RLHFPage from './pages/RLHFPage';
 import ExpertSystemPage from './pages/ExpertSystemPage';
+import PretrainedModelPage from './pages/PretrainedModelPage';
 
 function App() {
   // 使用HashRouter替代BrowserRouter，这样在GitHub Pages环境中更可靠
@@ -35,6 +36,7 @@ function App() {
         <Route path="/transformers" element={<TransformersPage />} />
         <Route path="/rlhf" element={<RLHFPage />} />
         <Route path="/expert-system" element={<ExpertSystemPage />} />
+        <Route path="/pretrained-model" element={<PretrainedModelPage />} />
       </Routes>
     </HashRouter>
   );
