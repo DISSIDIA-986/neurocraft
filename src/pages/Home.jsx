@@ -122,6 +122,62 @@ const Home = () => {
       image: '🤖',
       color: 'from-rose-400 to-red-600',
       path: '/rlhf'
+    },
+    {
+      id: 'opencv',
+      title: 'OpenCV Computer Vision',
+      description: 'Learn computer vision fundamentals, basic image processing techniques (filtering, edge detection, transformations), and practical applications in various industries.',
+      image: '👁️',
+      color: 'from-sky-400 to-sky-600',
+      path: '/opencv'
+    },
+    {
+      id: 'pytorch',
+      title: 'PyTorch Deep Learning Framework',
+      description: 'Understand PyTorch as a deep learning framework, covering tensors, automatic differentiation, neural network modules, and practical implementation examples.',
+      image: '🔥',
+      color: 'from-amber-400 to-orange-600',
+      path: '/pytorch'
+    },
+    {
+      id: 'llm',
+      title: 'Large Language Models (LLM)',
+      description: 'Explore the architecture, training process, capabilities, and limitations of large language models, including recent developments and future trends.',
+      image: '🧠',
+      color: 'from-violet-400 to-purple-600',
+      path: '/llm'
+    },
+    {
+      id: 'attention',
+      title: 'Attention Mechanism',
+      description: 'Dive deep into the attention mechanism, including query, key, value concepts, self-attention, multi-head attention, and its applications.',
+      image: '🎯',
+      color: 'from-pink-400 to-rose-600',
+      path: '/attention'
+    },
+    {
+      id: 'rnn',
+      title: 'Recurrent Neural Networks (RNN)',
+      description: 'Learn how RNNs handle sequential data, explore LSTM and GRU variants, and understand applications in time series and NLP tasks.',
+      image: '🔄',
+      color: 'from-emerald-400 to-green-600',
+      path: '/rnn'
+    },
+    {
+      id: 'gan',
+      title: 'Generative Adversarial Networks (GAN)',
+      description: 'Understand the adversarial training process, generator and discriminator roles, and applications in image and content generation.',
+      image: '🎨',
+      color: 'from-fuchsia-400 to-pink-600',
+      path: '/gan'
+    },
+    {
+      id: 'autoencoder',
+      title: 'AutoEncoders',
+      description: 'Study the encoder-decoder architecture, compression and reconstruction concepts, and applications in dimensionality reduction and anomaly detection.',
+      image: '🔐',
+      color: 'from-lime-400 to-green-600',
+      path: '/autoencoder'
     }
   ];
 
