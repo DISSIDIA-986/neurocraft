@@ -178,6 +178,14 @@ const Home = () => {
       image: '🔐',
       color: 'from-lime-400 to-green-600',
       path: '/autoencoder'
+    },
+    {
+      id: 'diffusion',
+      title: 'Diffusion Models',
+      description: 'Understand how diffusion models generate images from noise through a step-by-step denoising process. Learn the principles behind DALL-E, Stable Diffusion, and other AI image generators.',
+      image: '✨',
+      color: 'from-blue-400 to-cyan-600',
+      path: '/diffusion'
     }
   ];
 

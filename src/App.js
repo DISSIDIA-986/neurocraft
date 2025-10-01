@@ -22,6 +22,7 @@ import AttentionPage from './pages/AttentionPage';
 import RNNPage from './pages/RNNPage';
 import GANPage from './pages/GANPage';
 import AutoEncoderPage from './pages/AutoEncoderPage';
+import DiffusionPage from './pages/DiffusionPage';
 
 function App() {
   // 使用HashRouter替代BrowserRouter，这样在GitHub Pages环境中更可靠
@@ -51,6 +52,7 @@ function App() {
         <Route path="/rnn" element={<RNNPage />} />
         <Route path="/gan" element={<GANPage />} />
         <Route path="/autoencoder" element={<AutoEncoderPage />} />
+        <Route path="/diffusion" element={<DiffusionPage />} />
       </Routes>
     </HashRouter>
   );
