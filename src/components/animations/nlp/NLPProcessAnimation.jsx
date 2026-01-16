@@ -98,7 +98,7 @@ const NLPProcessAnimation = () => {
         { word: "快速", original: "快速" },
         { word: "奔跑", original: "奔跑" }
       ],
-      description: "处理词缀还原（如"们"等，中文形态变化较少）"
+      description: "处理词缀还原（如\"们\"等，中文形态变化较少）"
     }
   ];
 
