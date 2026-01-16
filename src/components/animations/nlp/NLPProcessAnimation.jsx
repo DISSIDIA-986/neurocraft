@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 const NLPProcessAnimation = () => {
   const [step, setStep] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [language, setLanguage] = useState('en');
   
   const originalSentence = "The children were quickly running through the beautiful forests yesterday.";
+  const chineseSentence = "昨天孩子们在美丽的森林里快速地奔跑着。";
   
-  const steps = [
+  const englishSteps = [
     {
       title: "Original Text",
       text: originalSentence,
@@ -20,7 +22,7 @@ const NLPProcessAnimation = () => {
     {
       title: "Tokenization",
       text: ["the", "children", "were", "quickly", "running", "through", "the", "beautiful", "forests", "yesterday"],
-      description: "Sentence broken down into individual words"
+      description: "Sentence broken down into individual words (split by spaces)"
     },
     {
       title: "Stopwords Removal",
@@ -52,6 +54,55 @@ const NLPProcessAnimation = () => {
       description: "Reduced words to their base or dictionary form"
     }
   ];
+
+  const chineseSteps = [
+    {
+      title: "原始文本",
+      text: chineseSentence,
+      description: "输入原始中文句子"
+    },
+    {
+      title: "基础文本清理",
+      text: "昨天孩子们在美丽的森林里快速地奔跑着",
+      description: "去除标点符号（中文无需转换大小写）"
+    },
+    {
+      title: "分词 (Tokenization)",
+      text: ["昨天", "孩子们", "在", "美丽", "的", "森林", "里", "快速", "地", "奔跑", "着"],
+      description: "使用分词工具（如jieba）将句子切分成词（中文无空格分隔，需要专门算法）"
+    },
+    {
+      title: "停用词移除",
+      text: ["昨天", "孩子们", "美丽", "森林", "快速", "奔跑"],
+      description: "移除常见停用词（在、的、里、地、着）"
+    },
+    {
+      title: "词性标注",
+      text: [
+        { word: "昨天", pos: "时间词" },
+        { word: "孩子们", pos: "名词" },
+        { word: "美丽", pos: "形容词" },
+        { word: "森林", pos: "名词" },
+        { word: "快速", pos: "形容词" },
+        { word: "奔跑", pos: "动词" }
+      ],
+      description: "标注每个词的词性"
+    },
+    {
+      title: "词形归一化",
+      text: [
+        { word: "昨天", original: "昨天" },
+        { word: "孩子", original: "孩子们" },
+        { word: "美丽", original: "美丽" },
+        { word: "森林", original: "森林" },
+        { word: "快速", original: "快速" },
+        { word: "奔跑", original: "奔跑" }
+      ],
+      description: "处理词缀还原（如"们"等，中文形态变化较少）"
+    }
+  ];
+
+  const steps = language === 'en' ? englishSteps : chineseSteps;
 
   useEffect(() => {
     let timer;
@@ -121,7 +172,31 @@ const NLPProcessAnimation = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 bg-white rounded-xl shadow-md">
-      <h1 className="text-2xl font-bold text-center mb-6">NLP Processing Pipeline Animation</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">NLP Processing Pipeline Animation</h1>
+        <div className="flex gap-2">
+          <button
+            className={`px-4 py-2 rounded-lg transition-colors ${
+              language === 'en' 
+                ? 'bg-blue-500 text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+            onClick={() => setLanguage('en')}
+          >
+            English
+          </button>
+          <button
+            className={`px-4 py-2 rounded-lg transition-colors ${
+              language === 'zh' 
+                ? 'bg-blue-500 text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+            onClick={() => setLanguage('zh')}
+          >
+            中文
+          </button>
+        </div>
+      </div>
       
       {/* Progress bar */}
       <div className="mb-8">

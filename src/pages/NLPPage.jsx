@@ -16,6 +16,10 @@ const NLPPage = () => {
             您将看到文本清理、分词、停用词移除、词性标注以及词形还原等关键处理步骤。
             这些是大多数NLP任务的预处理基础，对理解更复杂的NLP模型和应用至关重要。
           </p>
+          <p className="text-gray-700 mt-2">
+            <strong>💡 提示：</strong>点击右上角的语言切换按钮，可以对比英文和中文在NLP处理流程上的差异。
+            中文分词需要专门算法（如jieba），而英文只需按空格分割；中文形态变化较少，词形还原步骤相对简单。
+          </p>
         </div>
         
         <NLPProcessAnimation />
@@ -24,10 +28,25 @@ const NLPPage = () => {
           <h3 className="text-lg font-semibold mb-2">关键概念</h3>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
             <li><strong>文本清理</strong> - 去除特殊字符、统一大小写等基本处理</li>
-            <li><strong>分词 (Tokenization)</strong> - 将文本分割成单独的单词或标记</li>
-            <li><strong>停用词 (Stopwords)</strong> - 移除常见但对分析没有实质帮助的词（如"the"、"and"等）</li>
+            <li><strong>分词 (Tokenization)</strong> - 将文本分割成单独的单词或标记
+              <ul className="list-circle pl-5 mt-1 text-sm">
+                <li>英文：按空格分割即可</li>
+                <li>中文：需要使用分词算法（jieba、pkuseg等）处理无空格分隔的文本</li>
+              </ul>
+            </li>
+            <li><strong>停用词 (Stopwords)</strong> - 移除常见但对分析没有实质帮助的词
+              <ul className="list-circle pl-5 mt-1 text-sm">
+                <li>英文：如"the"、"and"、"is"等</li>
+                <li>中文：如"的"、"了"、"在"等</li>
+              </ul>
+            </li>
             <li><strong>词性标注 (POS Tagging)</strong> - 标识每个单词的词性（名词、动词、形容词等）</li>
-            <li><strong>词形还原 (Lemmatization)</strong> - 将单词还原为其基本形式（如"running" → "run"）</li>
+            <li><strong>词形还原 (Lemmatization)</strong> - 将单词还原为其基本形式
+              <ul className="list-circle pl-5 mt-1 text-sm">
+                <li>英文：形态变化丰富，如"running" → "run"、"children" → "child"</li>
+                <li>中文：形态变化较少，主要处理量词和语气词，如"孩子们" → "孩子"</li>
+              </ul>
+            </li>
             <li><strong>NLP管道</strong> - 将这些处理步骤组合成一个流水线处理过程</li>
           </ul>
         </div>
